@@ -11,14 +11,16 @@ def printlist(headnode):
         curr = curr.next;
 
 
-def rearrange(headnode):
+def reverse(headnode):
+    prev = None;
     curr = headnode;
-    while curr.next.next != None:
-        curr = curr.next;
-    curr.next.next = headnode;
-    head = curr.next;
-    curr.next = None;
-    return head;
+    next = headnode;
+    while curr != None:
+        next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    return prev;
 
 
 head = Node(1);
@@ -29,5 +31,7 @@ head.next.next.next.next = Node(5);
 
 printlist(head);
 
-head = rearrange(head);
+head = reverse(head);
+
+print("");
 printlist(head);
