@@ -1,14 +1,4 @@
-class Node:
-    def __init__(self, data):
-        self.data = data;
-        self.next = None;
-
-
-def printlist(headnode):
-    curr = headnode;
-    while curr != None:
-        print(curr.data, end=" ");
-        curr = curr.next;
+from P12.LinkedList import LinkedList
 
 
 def reverse(headnode):
@@ -23,15 +13,13 @@ def reverse(headnode):
     return prev;
 
 
-head = Node(1);
-head.next = Node(2);
-head.next.next = Node(3);
-head.next.next.next = Node(4);
-head.next.next.next.next = Node(5);
-
-printlist(head);
-
-head = reverse(head);
-
+list = LinkedList();
+list.add_list_item(1);
+list.add_list_item(2);
+list.add_list_item(3);
+list.add_list_item(4);
+list.add_list_item(5);
+list.printlist();
 print("");
-printlist(head);
+reverse(list);
+list.printlist();
