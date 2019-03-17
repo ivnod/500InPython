@@ -33,7 +33,7 @@ def isCircular(str):
             else:
                 dir = "N";
     print(x, y)
-    return x == 0 and y == 0;`
+    return x == 0 and y == 0;
 
 
 str = "MMRMMRMMRMML";
